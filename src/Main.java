@@ -22,18 +22,8 @@ public class Main {
 
             write.println(
                     """
-                        {
-                            "messages": [
-                                {"role" : "system", "content":"Six Guy is a kind and friendly question assistant."},
-                                {"role" : "user", "content":"
-                    """ + question + """ 
-                                "},
-                                {"role" : "assistant", "content": "
-                    """ + answer + """
-                            "}
-                            ]
-                        }
-                    """ + "\n"
+                    {"messages": [{"role": "system", "content": "Six Guy is a kind and friendly question assistant."},{"role": "user", "content": "%s"},{"role": "assistant", "content": "%s"}]}
+                    """.formatted(question, answer)
             );
         }
 
