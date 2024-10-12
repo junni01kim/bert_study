@@ -14,16 +14,18 @@ public class Main {
             line = read.readLine();
             if (line==null) break;
 
+            line = line.replaceAll("\"", "__");
+
             seperate = line.indexOf("###");
             question = line.substring(0, seperate-1);
-            answer = line.substring(seperate+3);
+            answer = line.substring(seperate+4);
 
             System.out.println(line);
 
             write.println(
                     """
                     {"messages": [{"role": "system", "content": "Six Guy is a kind and friendly question assistant."},{"role": "user", "content": "%s"},{"role": "assistant", "content": "%s"}]}
-                    """.formatted(question, answer)
+                    """.formatted(question, answer).trim()
             );
         }
 
