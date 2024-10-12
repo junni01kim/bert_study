@@ -2,7 +2,7 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader read = new BufferedReader(new FileReader("data.txt"));
+        BufferedReader read = new BufferedReader(new FileReader(".\\src\\data.txt"));
         PrintWriter write = new PrintWriter("result.jsonl");
 
         String question = "";
@@ -25,12 +25,12 @@ public class Main {
                         {
                             "messages": [
                                 {"role" : "system", "content":"Six Guy is a kind and friendly question assistant."},
-                                {"role" : "user", "content":
+                                {"role" : "user", "content":"
                     """ + question + """ 
-                                },
-                                {"role" : "assistant", "content":
+                                "},
+                                {"role" : "assistant", "content": "
                     """ + answer + """
-                            }
+                            "}
                             ]
                         }
                     """ + "\n"
